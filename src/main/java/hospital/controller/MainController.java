@@ -110,8 +110,9 @@ public class MainController implements Initializable {
     @FXML
     private void handleDepartmentsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
-        AlertUtils.showInformation("Under Development", "Departments Management",
-                "This module is currently under development and will be available soon.");
+        openTab("Department Management", "view/DepartmentView.fxml");
+//        AlertUtils.showInformation("Under Development", "Departments Management",
+//                "This module is currently under development and will be available soon.");
     }
 
     /**
@@ -120,8 +121,9 @@ public class MainController implements Initializable {
     @FXML
     private void handleWardsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
-        AlertUtils.showInformation("Under Development", "Wards Management",
-                "This module is currently under development and will be available soon.");
+        openTab("Ward Management", "view/WardView.fxml");
+//        AlertUtils.showInformation("Under Development", "Wards Management",
+//                "This module is currently under development and will be available soon.");
     }
 
     /**
@@ -130,8 +132,9 @@ public class MainController implements Initializable {
     @FXML
     private void handleHospitalizationsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
-        AlertUtils.showInformation("Under Development", "Hospitalizations Management",
-                "This module is currently under development and will be available soon.");
+        openTab("Hospitalization Management", "view/HospitalizationView.fxml");
+//        AlertUtils.showInformation("Under Development", "Hospitalizations Management",
+//                "This module is currently under development and will be available soon.");
     }
 
     /**
@@ -140,8 +143,9 @@ public class MainController implements Initializable {
     @FXML
     private void handlePatientReportsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
-        AlertUtils.showInformation("Under Development", "Patient Reports",
-                "This module is currently under development and will be available soon.");
+        openTab("Patient Reports", "view/PatientReportView.fxml");
+//        AlertUtils.showInformation("Under Development", "Patient Reports",
+//                "This module is currently under development and will be available soon.");
     }
 
     /**
@@ -150,8 +154,9 @@ public class MainController implements Initializable {
     @FXML
     private void handleStaffReportsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
-        AlertUtils.showInformation("Under Development", "Staff Reports",
-                "This module is currently under development and will be available soon.");
+        openTab("Staff Reports", "view/StaffReportView.fxml");
+//        AlertUtils.showInformation("Under Development", "Staff Reports",
+//                "This module is currently under development and will be available soon.");
     }
 
     /**

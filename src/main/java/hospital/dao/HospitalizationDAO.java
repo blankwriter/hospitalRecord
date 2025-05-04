@@ -399,4 +399,14 @@ public class HospitalizationDAO {
 
         return hospitalization;
     }
+
+    /**
+     * Gets a connection to the database.
+     *
+     * @return A Connection object
+     * @throws SQLException If a database access error occurs
+     */
+    public Connection getConnection() throws SQLException {
+        return DatabaseConnection.getInstance().getConnection();
+    }
 }

@@ -1,5 +1,6 @@
 package main.java.hospital.controller;
 
+import javafx.beans.value.ObservableValue;
 import main.java.hospital.dao.*;
 import main.java.hospital.model.*;
 import main.java.hospital.util.AlertUtils;
@@ -8,6 +9,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,10 +23,21 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Controller for the Patient Reports view.
@@ -274,12 +287,30 @@ public class PatientReportController implements Initializable {
             Map<String, Object> rowData = data.getValue();
             Object value = rowData.get(property);
 
+            // Cast to ObservableValue<Object> to ensure consistent return type
             if (value instanceof String) {
-                return new SimpleStringProperty((String) value);
+                return (ObservableValue<Object>) (ObservableValue<?>) new SimpleStringProperty((String) value);
             } else {
                 return new SimpleObjectProperty<>(value);
             }
         });
+
+        // Set cell factory for numeric values
+        if (property.equals("salary")) {
+            column.setCellFactory(col -> new TableCell<Map<String, Object>, Object>() {
+                @Override
+                protected void updateItem(Object item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                    } else if (item instanceof BigDecimal) {
+                        setText(String.format("$%.2f", ((BigDecimal) item).doubleValue()));
+                    } else {
+                        setText(item.toString());
+                    }
+                }
+            });
+        }
 
         // Set cell factory for date values
         if (property.contains("Date")) {
@@ -290,7 +321,7 @@ public class PatientReportController implements Initializable {
                     if (empty || item == null) {
                         setText(null);
                     } else if (item instanceof LocalDate) {
-                        setText(((LocalDate) item).format(DateTimeFormatter.ISO_LOCAL_DATE));
+                        setText(((LocalDate) item).toString());
                     } else {
                         setText(item.toString());
                     }
@@ -783,7 +814,10 @@ public class PatientReportController implements Initializable {
             String sqlAvgStay = "SELECT AVG(DATEDIFF(discharge_date, admission_date)) AS avg_stay " +
                     "FROM Hospitalization WHERE discharge_date IS NOT NULL";
             List<Map<String, Object>> avgStayResults = getCustomQueryResults(sqlAvgStay);
-            Double avgStay = (Double) avgStayResults.get(0).get("avg_stay");
+            Double avgStay = null;
+            if (avgStayResults.get(0).get("avg_stay") != null) {
+                avgStay = ((Number) avgStayResults.get(0).get("avg_stay")).doubleValue();
+            }
 
             // Get department with most patients
             String sqlTopDept = "SELECT department_code, COUNT(*) AS count FROM Hospitalization " +

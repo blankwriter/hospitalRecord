@@ -268,7 +268,18 @@ public class PatientController implements Initializable {
                 if (success) {
                     AlertUtils.showInformation("Success", "Patient Updated",
                             "Patient information was successfully updated.");
-                    loadPatientData();
+
+                    // Update the item in the list directly
+                    for (int i = 0; i < patientList.size(); i++) {
+                        if (patientList.get(i).getPatientId().equals(patient.getPatientId())) {
+                            patientList.set(i, patient);
+                            break;
+                        }
+                    }
+
+                    // Refresh the table
+                    tablePatients.refresh();
+
                     clearFields();
                     setStatus("Patient updated successfully");
                 } else {
@@ -355,7 +366,7 @@ public class PatientController implements Initializable {
         if (txtPhone.getText().trim().isEmpty()) {
             errorMessage.append("Phone number cannot be empty.\n");
         } else if (!ValidationUtils.isValidPhoneNumber(txtPhone.getText())) {
-            errorMessage.append("Phone number is invalid. Use format: XXX-XXXX or similar.\n");
+            errorMessage.append("Phone number is invalid. Use format: XXX-XXX-XXXX or similar.\n");
         }
 
         if (errorMessage.length() > 0) {

@@ -437,7 +437,18 @@ public class WardController implements Initializable {
                 if (success) {
                     AlertUtils.showInformation("Success", "Ward Updated",
                             "Ward information was successfully updated.");
-                    loadWardData();
+
+                    // Update the item in the list directly
+                    for (int i = 0; i < wardList.size(); i++) {
+                        if (wardList.get(i).getWardId().equals(ward.getWardId())) {
+                            wardList.set(i, ward);
+                            break;
+                        }
+                    }
+
+                    // Refresh the table
+                    tableWards.refresh();
+
                     clearFields();
                     setStatus("Ward updated successfully");
                 } else {

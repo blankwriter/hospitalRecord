@@ -115,11 +115,7 @@ public class Patient {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Returns the full name of the patient.
-     *
-     * @return A string containing the patient's first name and surname
-     */
+
     public String getFullName() {
         return firstName + " " + surname;
     }

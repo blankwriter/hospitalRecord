@@ -174,22 +174,17 @@ public class HospitalizationController implements Initializable {
         loadDoctorData();
         loadWardData();
 
-        // Load hospitalization data
         loadHospitalizationData();
 
-        // Set up comboboxes with custom string converters
         setupComboBoxes();
 
-        // Set table selection listener
         tableHospitalizations.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showHospitalizationDetails(newValue));
 
-        // Initialize button states
         btnUpdate.setDisable(true);
         btnDischarge.setDisable(true);
         btnDelete.setDisable(true);
 
-        // Set up department-ward dependency
         cmbDepartment.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 // Set wards for the selected department
@@ -219,9 +214,7 @@ public class HospitalizationController implements Initializable {
         statusLabel.setText(message);
     }
 
-    /**
-     * Sets up all comboboxes with appropriate string converters.
-     */
+
     private void setupComboBoxes() {
         // Patient combobox
         cmbPatient.setConverter(new StringConverter<Patient>() {
@@ -236,7 +229,6 @@ public class HospitalizationController implements Initializable {
             }
         });
 
-        // Department combobox
         cmbDepartment.setConverter(new StringConverter<Department>() {
             @Override
             public String toString(Department department) {
@@ -249,7 +241,6 @@ public class HospitalizationController implements Initializable {
             }
         });
 
-        // Ward combobox
         cmbWard.setConverter(new StringConverter<Ward>() {
             @Override
             public String toString(Ward ward) {
@@ -262,7 +253,6 @@ public class HospitalizationController implements Initializable {
             }
         });
 
-        // Doctor combobox
         cmbDoctor.setConverter(new StringConverter<Doctor>() {
             @Override
             public String toString(Doctor doctor) {
@@ -285,7 +275,6 @@ public class HospitalizationController implements Initializable {
             patientList = FXCollections.observableArrayList(patients);
             cmbPatient.setItems(patientList);
 
-            // Create a map of patient IDs to names for display in the table
             patientNames.clear();
             for (Patient patient : patients) {
                 patientNames.put(patient.getPatientId(), patient.getFullName());

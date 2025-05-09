@@ -1,119 +1,166 @@
-/* Application-wide styles */
-
+/* -------------------- Global Defaults -------------------- */
 .root {
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 12px;
-    -fx-background-color: #f5f5f5;
+    -fx-font-size: 13px;
+    -fx-background-color:
+    ;
 }
 
-/* Button styles */
-.button {
-    -fx-background-color: #2196F3;
+/* -------------------- Top Bar -------------------- */
+.top-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 15;
+}
+.top-bar .label {
+    -fx-font-size: 22px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-cursor: hand;
-    -fx-padding: 8px 16px;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
 }
 
-.button:hover {
-    -fx-background-color: #0d8bf2;
-}
-
-.button:pressed {
-    -fx-background-color: #0b7ddb;
-}
-
-/* Dashboard buttons */
-.dashboard-button {
-    -fx-background-color: #4CAF50;
-    -fx-min-width: 150px;
-    -fx-min-height: 80px;
-    -fx-font-size: 14px;
-}
-
-.dashboard-button:hover {
-    -fx-background-color: #3d8b40;
-}
-
-/* Table styles */
-.table-view {
-    -fx-background-color: white;
-    -fx-border-color: #ddd;
-    -fx-border-width: 1px;
-}
-
-.table-view .column-header {
-    -fx-background-color: #f2f2f2;
-    -fx-font-weight: bold;
-    -fx-padding: 8px;
-}
-
-.table-view .table-row-cell:odd {
-    -fx-background-color: #f9f9f9;
-}
-
-.table-view .table-row-cell:selected {
-    -fx-background-color: #b3d9ff;
-}
-
-/* Form fields */
-.text-field, .text-area, .combo-box {
-    -fx-background-color: white;
-    -fx-border-color: #ccc;
-    -fx-border-radius: 3px;
-    -fx-padding: 5px;
-}
-
-.text-field:focused, .text-area:focused, .combo-box:focused {
-    -fx-border-color: #2196F3;
-}
-
-/* Tab styles */
-.tab-pane {
-    -fx-tab-min-height: 30px;
-    -fx-tab-max-height: 30px;
-}
-
-.tab {
-    -fx-background-color: #e0e0e0;
-    -fx-padding: 5px 10px;
-}
-
-.tab-pane .tab:selected {
-    -fx-background-color: white;
-    -fx-focus-color: transparent;
-}
-
-/* Status bar */
+/* -------------------- Status Bar -------------------- */
 .status-bar {
-    -fx-background-color: #f0f0f0;
-    -fx-padding: 5px;
-    -fx-border-color: #ddd;
+    -fx-background-color: #eeeeee;
+    -fx-padding: 6px 10px;
+    -fx-border-color: #cccccc;
     -fx-border-width: 1px 0 0 0;
 }
+.status-bar-dark {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 6px 10px;
+}
+.status-bar-dark .label {
+    -fx-text-fill: white;
+}
 
-/* Labels */
+/* -------------------- Buttons -------------------- */
+.button {
+    -fx-background-color: linear-gradient(to bottom right, #0b3b6b, #0b3b6b);
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(66, 165, 245, 0.4), 5, 0.2, 0, 2);
+}
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #0854a1, #0854a1);
+}
+.button:pressed {
+    -fx-background-color: #1976d2;
+}
+
+/* Dashboard-style big buttons */
+.dashboard-button {
+    -fx-background-color: linear-gradient(to bottom, #66bb6a, #43a047);
+    -fx-min-width: 160px;
+    -fx-min-height: 90px;
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+}
+.dashboard-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+/* -------------------- Table Styling -------------------- */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6px;
+    -fx-padding: 5px;
+    -fx-table-cell-border-color: #e0e0e0;
+}
+.table-view .column-header {
+    -fx-background-color: #f7f5f5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 4px;
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f7f9fc;
+}
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #bbdefb;
+}
+.table-view .table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* -------------------- Inputs & Fields -------------------- */
+.text-field,
+.text-area,
+.combo-box,
+.date-picker {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdbdbd;
+    -fx-border-radius: 6px;
+    -fx-padding: 7px;
+    -fx-font-size: 13px;
+}
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused {
+    -fx-border-color: #0b3b6b;
+    -fx-effect: dropshadow(gaussian, rgba(33, 150, 243, 0.2), 4, 0.1, 0, 1);
+}
+.text-field:disabled,
+.combo-box:disabled {
+    -fx-opacity: 0.6;
+    -fx-background-color: #eeeeee;
+}
+
+/* -------------------- Labels and Titles -------------------- */
 .title-label {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-padding: 5px 0;
+    -fx-padding: 6px 0;
 }
-
-/* Section headers */
 .section-header {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-padding: 5px 0;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 5 0 5 0;
 }
-
-/* Error styling */
 .error-label {
-    -fx-text-fill: #f44336;
+    -fx-text-fill: #e53935;
     -fx-font-weight: bold;
 }
 
+/* -------------------- Error Field -------------------- */
 .error-field {
-    -fx-border-color: #f44336;
+    -fx-border-color: #e53935;
+    -fx-border-width: 2px;
+}
+
+/* -------------------- Tab Styling -------------------- */
+.tab-pane {
+    -fx-tab-min-height: 32px;
+    -fx-tab-max-height: 32px;
+}
+.tab {
+    -fx-background-color: #eeeeee;
+    -fx-padding: 6px 12px;
+    -fx-background-radius: 5px 5px 0 0;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px 1px 0 1px;
+}
+
+/* -------------------- Cards and Containers -------------------- */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 10, 0.1, 0, 4);
+}
+
+/* -------------------- Hover Effects -------------------- */
+.hoverable:hover {
+    -fx-background-color: #e3f2fd;
+    -fx-cursor: hand;
 }

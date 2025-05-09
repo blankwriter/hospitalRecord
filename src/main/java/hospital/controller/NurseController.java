@@ -65,12 +65,7 @@ public class NurseController implements Initializable {
     @FXML private Button btnDelete;
     @FXML private Button btnClear;
 
-    /**
-     * Initializes the controller.
-     *
-     * @param location  The location used to resolve relative paths
-     * @param resources The resources used to localize the root object
-     */
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         logger.info("Initializing NurseController");
@@ -83,13 +78,10 @@ public class NurseController implements Initializable {
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colDepartment.setCellValueFactory(new PropertyValueFactory<>("departmentCode"));
 
-        // Load nurse data
         loadNurseData();
 
-        // Load department data for combobox
         loadDepartmentData();
 
-        // Initialize rotation combobox
         cmbRotation.setItems(FXCollections.observableArrayList("Morning", "Evening", "Night"));
 
         // Set table selection listener

@@ -28,13 +28,6 @@ public class DoctorDAO {
         this.employeeDAO = new EmployeeDAO();
     }
 
-    /**
-     * Inserts a new doctor into the database.
-     * Assumes the employee data has already been inserted.
-     *
-     * @param doctor The Doctor object to insert
-     * @return true if successful, false otherwise
-     */
     public boolean insert(Doctor doctor) {
         String sql = "INSERT INTO Doctor (employee_id, speciality) VALUES (?, ?)";
 

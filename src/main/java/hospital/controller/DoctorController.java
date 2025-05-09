@@ -74,21 +74,17 @@ public class DoctorController implements Initializable {
         colSpeciality.setCellValueFactory(new PropertyValueFactory<>("speciality"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-        // Load doctor data
         loadDoctorData();
 
         // Set table selection listener
         tableDoctors.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showDoctorDetails(newValue));
 
-        // Disable employee ID field (auto-generated)
         txtEmployeeId.setEditable(false);
 
-        // Initialize button states
         btnUpdate.setDisable(true);
         btnDelete.setDisable(true);
 
-        // Set up search functionality
         setupSearch();
 
         setStatus("Doctor management module loaded");
@@ -328,10 +324,7 @@ public class DoctorController implements Initializable {
         }
     }
 
-    /**
-     * Handles the delete button action.
-     * Confirms deletion and removes the doctor from the database.
-     */
+
     @FXML
     private void handleDeleteAction(ActionEvent event) {
         try {

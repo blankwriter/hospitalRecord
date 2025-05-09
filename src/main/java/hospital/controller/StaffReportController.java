@@ -77,18 +77,12 @@ public class StaffReportController implements Initializable {
         setStatus("Staff report module loaded");
     }
 
-    /**
-     * Sets the status message.
-     *
-     * @param message The status message to display
-     */
+
     private void setStatus(String message) {
         statusLabel.setText(message);
     }
 
-    /**
-     * Loads doctor data for the combobox.
-     */
+
     private void loadDoctorData() {
         try {
             List<Doctor> doctors = doctorDAO.findAll();
@@ -955,12 +949,6 @@ public class StaffReportController implements Initializable {
         }
     }
 
-    /**
-     * Gets the property name for a column based on its title.
-     *
-     * @param columnTitle The title of the column
-     * @return The property name for the column
-     */
     private String getPropertyNameForColumn(String columnTitle) {
         switch (columnTitle) {
             case "ID": return "employeeId";

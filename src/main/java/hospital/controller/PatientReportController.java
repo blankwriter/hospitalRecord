@@ -136,9 +136,6 @@ public class PatientReportController implements Initializable {
         });
     }
 
-    /**
-     * Loads patient data for the patient combobox and name mapping.
-     */
     private void loadPatientData() {
         try {
             List<Patient> patients = patientDAO.findAll();
@@ -912,14 +909,7 @@ public class PatientReportController implements Initializable {
         reportData.add(row);
     }
 
-    /**
-     * Executes a custom SQL query and returns the results as a list of maps.
-     *
-     * @param sql The SQL query to execute
-     * @param params The query parameters
-     * @return A list of maps containing the query results
-     * @throws SQLException If a database error occurs
-     */
+
     private List<Map<String, Object>> getCustomQueryResults(String sql, Object... params) throws SQLException {
         List<Map<String, Object>> results = new ArrayList<>();
 
@@ -1046,12 +1036,7 @@ public class PatientReportController implements Initializable {
         }
     }
 
-    /**
-     * Gets the property name for a column based on its title.
-     *
-     * @param columnTitle The title of the column
-     * @return The property name for the column
-     */
+
     private String getPropertyNameForColumn(String columnTitle) {
         switch (columnTitle) {
             case "Hospitalization ID": return "hospitalizationId";

@@ -264,12 +264,7 @@ public class HospitalizationDAO {
         }
     }
 
-    /**
-     * Finds hospitalizations by patient.
-     *
-     * @param patientId The ID of the patient to search for
-     * @return A list of hospitalizations for the specified patient
-     */
+
     public List<Hospitalization> findByPatient(int patientId) {
         String sql = "SELECT * FROM Hospitalization WHERE patient_id = ? ORDER BY admission_date DESC";
         List<Hospitalization> hospitalizations = new ArrayList<>();

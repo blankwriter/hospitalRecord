@@ -11,8 +11,8 @@ public class DatabaseConnection {
 
     // Database connection properties
     private static final String DB_URL = "jdbc:mysql://localhost:3306/hospitalSystem";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Qwertyuiop@123";
+    private static final String DB_USER = "";
+    private static final String DB_PASSWORD = "";
 
     // Singleton instance
     private static DatabaseConnection instance;

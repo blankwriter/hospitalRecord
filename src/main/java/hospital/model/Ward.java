@@ -56,83 +56,46 @@ public class Ward {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Gets the code of the department the ward belongs to.
-     *
-     * @return The department code
-     */
+
     public String getDepartmentCode() {
         return departmentCode;
     }
 
-    /**
-     * Sets the code of the department the ward belongs to.
-     *
-     * @param departmentCode The department code
-     */
+
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
 
-    /**
-     * Gets the ward number (local to the department).
-     *
-     * @return The ward number
-     */
+
     public Integer getWardNumber() {
         return wardNumber;
     }
 
-    /**
-     * Sets the ward number (local to the department).
-     *
-     * @param wardNumber The ward number
-     */
+
     public void setWardNumber(Integer wardNumber) {
         this.wardNumber = wardNumber;
     }
 
-    /**
-     * Gets the number of beds in the ward.
-     *
-     * @return The bed count
-     */
+
     public Integer getBedCount() {
         return bedCount;
     }
 
-    /**
-     * Sets the number of beds in the ward.
-     *
-     * @param bedCount The bed count
-     */
+
     public void setBedCount(Integer bedCount) {
         this.bedCount = bedCount;
     }
 
-    /**
-     * Gets the ID of the nurse who supervises the ward.
-     *
-     * @return The supervisor's employee ID
-     */
+
     public Integer getSupervisorId() {
         return supervisorId;
     }
 
-    /**
-     * Sets the ID of the nurse who supervises the ward.
-     *
-     * @param supervisorId The supervisor's employee ID
-     */
     public void setSupervisorId(Integer supervisorId) {
         this.supervisorId = supervisorId;
     }
 
-    /**
-     * Gets the timestamp when the record was created.
-     *
-     * @return The creation timestamp
-     */
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -164,11 +127,7 @@ public class Ward {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Returns a unique identifier for the ward (combination of department code and ward number).
-     *
-     * @return A string representation of the ward's composite key
-     */
+
     public String getWardId() {
         return departmentCode + "-" + wardNumber;
     }

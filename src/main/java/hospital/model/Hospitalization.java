@@ -4,10 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Represents a patient hospitalization in the HealthTrack System.
- * Tracks a patient's stay in a specific ward and their treatment by a doctor.
- */
+
 public class Hospitalization {
     private Integer hospitalizationId;
     private Integer patientId;
@@ -82,83 +79,45 @@ public class Hospitalization {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Gets the hospitalization ID.
-     *
-     * @return The hospitalization ID
-     */
+
     public Integer getHospitalizationId() {
         return hospitalizationId;
     }
 
-    /**
-     * Sets the hospitalization ID.
-     *
-     * @param hospitalizationId The hospitalization ID
-     */
+
     public void setHospitalizationId(Integer hospitalizationId) {
         this.hospitalizationId = hospitalizationId;
     }
 
-    /**
-     * Gets the ID of the hospitalized patient.
-     *
-     * @return The patient ID
-     */
+
     public Integer getPatientId() {
         return patientId;
     }
 
-    /**
-     * Sets the ID of the hospitalized patient.
-     *
-     * @param patientId The patient ID
-     */
+
     public void setPatientId(Integer patientId) {
         this.patientId = patientId;
     }
 
-    /**
-     * Gets the code of the department where the patient is hospitalized.
-     *
-     * @return The department code
-     */
     public String getDepartmentCode() {
         return departmentCode;
     }
 
-    /**
-     * Sets the code of the department where the patient is hospitalized.
-     *
-     * @param departmentCode The department code
-     */
+
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
 
-    /**
-     * Gets the number of the ward where the patient is hospitalized.
-     *
-     * @return The ward number
-     */
+
     public Integer getWardNumber() {
         return wardNumber;
     }
 
-    /**
-     * Sets the number of the ward where the patient is hospitalized.
-     *
-     * @param wardNumber The ward number
-     */
     public void setWardNumber(Integer wardNumber) {
         this.wardNumber = wardNumber;
     }
 
-    /**
-     * Gets the bed number assigned to the patient.
-     *
-     * @return The bed number
-     */
+
     public Integer getBedNumber() {
         return bedNumber;
     }
@@ -172,20 +131,12 @@ public class Hospitalization {
         this.bedNumber = bedNumber;
     }
 
-    /**
-     * Gets the patient's diagnosis.
-     *
-     * @return The diagnosis
-     */
+
     public String getDiagnosis() {
         return diagnosis;
     }
 
-    /**
-     * Sets the patient's diagnosis.
-     *
-     * @param diagnosis The diagnosis
-     */
+
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
@@ -199,20 +150,12 @@ public class Hospitalization {
         return doctorId;
     }
 
-    /**
-     * Sets the ID of the doctor treating the patient.
-     *
-     * @param doctorId The doctor ID
-     */
+
     public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 
-    /**
-     * Gets the date when the patient was admitted.
-     *
-     * @return The admission date
-     */
+
     public LocalDate getAdmissionDate() {
         return admissionDate;
     }
@@ -280,20 +223,11 @@ public class Hospitalization {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Checks if the patient is currently hospitalized.
-     *
-     * @return true if the patient is still hospitalized (discharge date is null), false otherwise
-     */
     public boolean isCurrentlyHospitalized() {
         return dischargeDate == null;
     }
 
-    /**
-     * Returns the ward identifier (combination of department code and ward number).
-     *
-     * @return A string representation of the ward's composite key
-     */
+
     public String getWardId() {
         return departmentCode + "-" + wardNumber;
     }

@@ -19,10 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-/**
- * Controller for the main view of the application.
- * Handles navigation between different modules.
- */
+
 public class MainController implements Initializable {
     private static final Logger logger = LogManager.getLogger(MainController.class);
 
@@ -144,8 +141,6 @@ public class MainController implements Initializable {
     private void handlePatientReportsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
         openTab("Patient Reports", "view/PatientReportView.fxml");
-//        AlertUtils.showInformation("Under Development", "Patient Reports",
-//                "This module is currently under development and will be available soon.");
     }
 
     /**
@@ -155,17 +150,8 @@ public class MainController implements Initializable {
     private void handleStaffReportsAction(ActionEvent event) {
         // For demonstration, show not implemented yet
         openTab("Staff Reports", "view/StaffReportView.fxml");
-//        AlertUtils.showInformation("Under Development", "Staff Reports",
-//                "This module is currently under development and will be available soon.");
     }
 
-    /**
-     * Opens a new tab with the specified title and content.
-     * If a tab with the same title already exists, it is brought to the front.
-     *
-     * @param title       The title of the tab
-     * @param contentPath The path to the FXML file for the tab content
-     */
     private void openTab(String title, String contentPath) {
         try {
             // Check if tab already exists

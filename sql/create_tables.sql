@@ -1,7 +1,6 @@
 -- HealthTrack System Database Schema
--- Create database
--- CREATE DATABASE IF NOT EXISTS hospital_db;
-USE hospital_db;
+
+USE hospitalSystem;
 
 -- Create Employee table (parent table for Doctor and Nurse)
 CREATE TABLE Employee (

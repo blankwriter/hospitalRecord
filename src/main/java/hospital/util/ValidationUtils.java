@@ -2,9 +2,7 @@ package main.java.hospital.util;
 
 import java.util.regex.Pattern;
 
-/**
- * Utility class for validating user input.
- */
+
 public class ValidationUtils {
     // Regular expressions for validation
     private static final String NAME_REGEX = "^[a-zA-Z\\s-']+$";

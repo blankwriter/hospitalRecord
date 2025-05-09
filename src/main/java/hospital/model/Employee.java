@@ -3,10 +3,7 @@ package main.java.hospital.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Represents an employee in the HealthTrack System.
- * This is the base class for Doctor and Nurse.
- */
+
 public class Employee {
     private Integer employeeId;
     private String firstName;

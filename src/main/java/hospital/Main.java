@@ -19,8 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Load the main view
-            // Changed path to match the package structure
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
             Parent root = loader.load();
 

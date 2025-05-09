@@ -62,56 +62,32 @@ public class Nurse extends Employee {
         this.departmentCode = departmentCode;
     }
 
-    /**
-     * Gets the nurse's rotation.
-     *
-     * @return The nurse's rotation
-     */
+
     public String getRotation() {
         return rotation;
     }
 
-    /**
-     * Sets the nurse's rotation.
-     *
-     * @param rotation The nurse's rotation
-     */
+
     public void setRotation(String rotation) {
         this.rotation = rotation;
     }
 
-    /**
-     * Gets the nurse's salary.
-     *
-     * @return The nurse's salary
-     */
+
     public BigDecimal getSalary() {
         return salary;
     }
 
-    /**
-     * Sets the nurse's salary.
-     *
-     * @param salary The nurse's salary
-     */
+
     public void setSalary(BigDecimal salary) {
         this.salary = salary;
     }
 
-    /**
-     * Gets the code of the department the nurse is assigned to.
-     *
-     * @return The department code
-     */
+
     public String getDepartmentCode() {
         return departmentCode;
     }
 
-    /**
-     * Sets the code of the department the nurse is assigned to.
-     *
-     * @param departmentCode The department code
-     */
+
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }

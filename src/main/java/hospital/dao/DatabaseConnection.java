@@ -6,16 +6,13 @@ import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Singleton class that manages database connections for the HealthTrack System.
- */
 public class DatabaseConnection {
     private static final Logger logger = LogManager.getLogger(DatabaseConnection.class);
 
     // Database connection properties
-    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/hospital_db";
-    private static final String DB_USER = "Emmanuel Arhu";
-    private static final String DB_PASSWORD = "Examplegh1!"; // Replace with your database password
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/hospitalSystem";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "Qwertyuiop@123";
 
     // Singleton instance
     private static DatabaseConnection instance;

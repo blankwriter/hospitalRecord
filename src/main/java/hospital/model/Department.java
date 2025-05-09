@@ -64,47 +64,26 @@ public class Department {
         return departmentCode;
     }
 
-    /**
-     * Sets the department's code.
-     *
-     * @param departmentCode The department code
-     */
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
 
-    /**
-     * Gets the department's name.
-     *
-     * @return The department name
-     */
+
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets the department's name.
-     *
-     * @param name The department name
-     */
+
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Gets the building where the department is located.
-     *
-     * @return The building name
-     */
+
     public String getBuilding() {
         return building;
     }
 
-    /**
-     * Sets the building where the department is located.
-     *
-     * @param building The building name
-     */
+
     public void setBuilding(String building) {
         this.building = building;
     }
@@ -118,47 +97,27 @@ public class Department {
         return directorId;
     }
 
-    /**
-     * Sets the ID of the doctor who directs the department.
-     *
-     * @param directorId The director's employee ID
-     */
+
     public void setDirectorId(Integer directorId) {
         this.directorId = directorId;
     }
 
-    /**
-     * Gets the timestamp when the record was created.
-     *
-     * @return The creation timestamp
-     */
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    /**
-     * Sets the timestamp when the record was created.
-     *
-     * @param createdAt The creation timestamp
-     */
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    /**
-     * Gets the timestamp when the record was last updated.
-     *
-     * @return The update timestamp
-     */
+
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    /**
-     * Sets the timestamp when the record was last updated.
-     *
-     * @param updatedAt The update timestamp
-     */
+
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }

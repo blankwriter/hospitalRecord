@@ -122,12 +122,6 @@ public class PatientDAO {
         return patients;
     }
 
-    /**
-     * Updates an existing patient in the database.
-     *
-     * @param patient The Patient object with updated values
-     * @return true if successful, false otherwise
-     */
     public boolean update(Patient patient) {
         String sql = "UPDATE Patient SET first_name = ?, surname = ?, address = ?, phone = ? WHERE patient_id = ?";
 

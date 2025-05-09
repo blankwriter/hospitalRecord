@@ -418,10 +418,6 @@ public class WardController implements Initializable {
         }
     }
 
-    /**
-     * Handles the update button action.
-     * Validates input and updates an existing ward in the database.
-     */
     @FXML
     private void handleUpdateAction(ActionEvent event) {
         if (validateInput()) {
@@ -499,11 +495,6 @@ public class WardController implements Initializable {
         }
     }
 
-    /**
-     * Validates the input fields.
-     *
-     * @return true if all inputs are valid, false otherwise
-     */
     private boolean validateInput() {
         StringBuilder errorMessage = new StringBuilder();
 

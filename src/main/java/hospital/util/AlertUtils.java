@@ -8,9 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-/**
- * Utility class for displaying various alert dialogs in the application.
- */
+
 public class AlertUtils {
     private static final Logger logger = LogManager.getLogger(AlertUtils.class);
 

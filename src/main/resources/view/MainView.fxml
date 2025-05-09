@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="main.java.hospital.controller.MainController"
-            prefHeight="768.0" prefWidth="1024.0">
+            prefHeight="768.0" prefWidth="1024.0"
+            style="-fx-background-color: #f5f5f5;">
 
+    <!-- Top Section with Background Gradient -->
     <top>
-        <VBox spacing="10">
-            <padding>
-                <Insets top="15" right="15" bottom="15" left="15"/>
-            </padding>
-
-            <HBox alignment="CENTER">
-                <Label text="HealthTrack System" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+        <VBox spacing="15" style="-fx-background-color: linear-gradient(to right, #2c3e50, #34495e); -fx-padding: 20;">
+            <HBox alignment="CENTER" spacing="15">
+                <!-- Interactive Title with Hover Effect -->
+                <Label text="HealthRecord System"
+                       style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.4, 0, 3); -fx-cursor: hand;"/>
             </HBox>
 
-            <MenuBar>
-                <Menu text="File">
+            <!-- Menu Bar with Gradient Effect and Hover Interactivity -->
+            <MenuBar style="-fx-background-color: #f7f5f5; -fx-text-fill: white;">
+                <Menu text="File" style="-fx-font-size: 14px; -fx-text-fill: white;">
                     <MenuItem text="Exit" onAction="#handleExitAction"/>
                 </Menu>
-                <Menu text="Management">
+                <Menu text="Management" style="-fx-font-size: 14px; -fx-text-fill: white;">
                     <MenuItem text="Patients" onAction="#handlePatientsAction"/>
                     <MenuItem text="Doctors" onAction="#handleDoctorsAction"/>
                     <MenuItem text="Nurses" onAction="#handleNursesAction"/>
@@ -31,67 +33,63 @@
                     <MenuItem text="Wards" onAction="#handleWardsAction"/>
                     <MenuItem text="Hospitalizations" onAction="#handleHospitalizationsAction"/>
                 </Menu>
-                <Menu text="Reports">
+                <Menu text="Reports" style="-fx-font-size: 14px; -fx-text-fill: white;">
                     <MenuItem text="Patient Reports" onAction="#handlePatientReportsAction"/>
                     <MenuItem text="Staff Reports" onAction="#handleStaffReportsAction"/>
                 </Menu>
-                <Menu text="Help">
+                <Menu text="Help" style="-fx-font-size: 14px; -fx-text-fill: white;">
                     <MenuItem text="About" onAction="#handleAboutAction"/>
                 </Menu>
             </MenuBar>
         </VBox>
     </top>
 
+    <!-- Center Dashboard with Stylish Cards and Smooth Transitions -->
     <center>
-        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: transparent;">
             <Tab text="Dashboard" fx:id="dashboardTab">
-                <VBox spacing="20" alignment="CENTER">
-                    <padding>
-                        <Insets top="20" right="20" bottom="20" left="20"/>
-                    </padding>
+                <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-padding: 20;">
+                    <VBox spacing="40" alignment="CENTER" style="-fx-padding: 40; -fx-background-color: #ffffff; -fx-background-radius: 15px; -fx-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                        <!-- Main Heading with Modern Font -->
+                        <Label text="Welcome to HealthRecord System"
+                               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-family: 'Segoe UI';"/>
 
-                    <Label text="Welcome to HealthTrack System" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
-                    <Label text="Please use the menu above to navigate to different modules." style="-fx-font-size: 14;"/>
+                        <Label text="Navigate through the modules with ease."
+                               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
 
-                    <GridPane hgap="20" vgap="20" alignment="CENTER">
-                        <padding>
-                            <Insets top="30" right="10" bottom="10" left="10"/>
-                        </padding>
-
-                        <Button text="Patients" minWidth="150" minHeight="80"
-                                onAction="#handlePatientsAction"
-                                GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-
-                        <Button text="Doctors" minWidth="150" minHeight="80"
-                                onAction="#handleDoctorsAction"
-                                GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
-                        <Button text="Nurses" minWidth="150" minHeight="80"
-                                onAction="#handleNursesAction"
-                                GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-
-                        <Button text="Departments" minWidth="150" minHeight="80"
-                                onAction="#handleDepartmentsAction"
-                                GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-
-                        <Button text="Wards" minWidth="150" minHeight="80"
-                                onAction="#handleWardsAction"
-                                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
-                        <Button text="Hospitalizations" minWidth="150" minHeight="80"
-                                onAction="#handleHospitalizationsAction"
-                                GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-                    </GridPane>
-                </VBox>
+                        <!-- Card Design for Action Buttons -->
+                        <TilePane hgap="30" vgap="30" alignment="CENTER" prefColumns="3" style="-fx-padding: 20;">
+                            <!-- Button Cards with Hover Effects -->
+                            <Button text="Patients" minWidth="180" minHeight="100"
+                                    onAction="#handlePatientsAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #1abc9c, #16a085); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                            <Button text="Doctors" minWidth="180" minHeight="100"
+                                    onAction="#handleDoctorsAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #3498db, #2980b9); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                            <Button text="Nurses" minWidth="180" minHeight="100"
+                                    onAction="#handleNursesAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #9b59b6, #8e44ad); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                            <Button text="Departments" minWidth="180" minHeight="100"
+                                    onAction="#handleDepartmentsAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #e67e22, #d35400); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                            <Button text="Wards" minWidth="180" minHeight="100"
+                                    onAction="#handleWardsAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #f1c40f, #f39c12); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                            <Button text="Hospitalizations" minWidth="180" minHeight="100"
+                                    onAction="#handleHospitalizationsAction"
+                                    style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 15px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 2, 0, 4); -fx-transition: transform 0.2s ease-in-out;"/>
+                        </TilePane>
+                    </VBox>
+                </ScrollPane>
             </Tab>
         </TabPane>
     </center>
 
+    <!-- Animated Bottom Footer with Dynamic Color Change -->
     <bottom>
-        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #f0f0f0; -fx-padding: 5;">
-            <Label text="HealthTrack System - © 2025" />
-            <Pane HBox.hgrow="ALWAYS" />
-            <Label fx:id="statusLabel" text="Ready" />
+        <HBox styleClass="status-bar-dark" alignment="CENTER_RIGHT" style="-fx-background-color: #2c3e50; -fx-padding: 10;">
+            <Label text="HealthRecord System - © 2025" style="-fx-text-fill: white; font-size: 14px;"/>
+            <Label fx:id="statusLabel" text="Ready" style="-fx-text-fill: white; font-size: 14px;"/>
         </HBox>
     </bottom>
 

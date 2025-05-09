@@ -25,12 +25,6 @@ public class EmployeeDAO {
         this.dbConnection = DatabaseConnection.getInstance();
     }
 
-    /**
-     * Inserts a new employee into the database.
-     *
-     * @param employee The Employee object to insert
-     * @return The generated employee ID if successful, or empty if failed
-     */
     public Optional<Integer> insert(Employee employee) {
         String sql = "INSERT INTO Employee (first_name, surname, address, phone) VALUES (?, ?, ?, ?)";
 

@@ -91,7 +91,7 @@
     </center>
 
     <bottom>
-        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #f0f0f0; -fx-padding: 5;">
+        <HBox styleClass="status-bar-dark" alignment="CENTER_RIGHT">
             <Label fx:id="statusLabel" text="Ready" />
         </HBox>
     </bottom>

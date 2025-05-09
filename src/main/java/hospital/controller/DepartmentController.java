@@ -77,9 +77,6 @@ public class DepartmentController implements Initializable {
         setStatus("Department management module loaded");
     }
 
-    /**
-     * Set status message
-     */
     private void setStatus(String message) {
         statusLabel.setText(message);
     }

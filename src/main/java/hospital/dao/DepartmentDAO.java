@@ -118,12 +118,6 @@ public class DepartmentDAO {
         return departments;
     }
 
-    /**
-     * Updates an existing department in the database.
-     *
-     * @param department The Department object with updated values
-     * @return true if successful, false otherwise
-     */
     public boolean update(Department department) {
         String sql = "UPDATE Department SET name = ?, building = ?, director_id = ? WHERE department_code = ?";
 

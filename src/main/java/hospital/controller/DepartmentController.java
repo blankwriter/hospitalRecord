@@ -24,10 +24,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-/**
- * Controller for the Department view.
- * Handles all UI interactions related to department management.
- */
 public class DepartmentController implements Initializable {
     private static final Logger logger = LogManager.getLogger(DepartmentController.class);
 
@@ -55,12 +51,6 @@ public class DepartmentController implements Initializable {
     @FXML private Button btnDelete;
     @FXML private Button btnClear;
 
-    /**
-     * Initializes the controller.
-     *
-     * @param location  The location used to resolve relative paths
-     * @param resources The resources used to localize the root object
-     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         logger.info("Initializing DepartmentController");

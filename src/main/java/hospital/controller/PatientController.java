@@ -73,7 +73,6 @@ public class PatientController implements Initializable {
         // Load patient data
         loadPatientData();
 
-        // Set table selection listener
         tablePatients.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPatientDetails(newValue));
 
@@ -244,10 +243,6 @@ public class PatientController implements Initializable {
         }
     }
 
-    /**
-     * Handles the update button action.
-     * Validates input and updates an existing patient in the database.
-     */
     @FXML
     private void handleUpdateAction(ActionEvent event) {
         if (validateInput()) {

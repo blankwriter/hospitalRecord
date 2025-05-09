@@ -297,16 +297,13 @@ public class NurseDAO {
         nurse.setSalary(rs.getBigDecimal("salary"));
         nurse.setDepartmentCode(rs.getString("department_code"));
 
-        // Convert SQL timestamps to LocalDateTime for nurse
         Timestamp nurseCreatedAt = rs.getTimestamp("created_at");
         if (nurseCreatedAt != null) {
-            // This is already set from employee, but we set it again for clarity
             nurse.setCreatedAt(nurseCreatedAt.toLocalDateTime());
         }
 
         Timestamp nurseUpdatedAt = rs.getTimestamp("updated_at");
         if (nurseUpdatedAt != null) {
-            // This is already set from employee, but we set it again for clarity
             nurse.setUpdatedAt(nurseUpdatedAt.toLocalDateTime());
         }
 

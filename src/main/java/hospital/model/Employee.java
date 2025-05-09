@@ -16,9 +16,7 @@ public class Employee {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    /**
-     * Default constructor
-     */
+
     public Employee() {
     }
 
@@ -116,11 +114,7 @@ public class Employee {
         this.updatedAt = updatedAt;
     }
 
-    /**
-     * Returns the full name of the employee.
-     *
-     * @return A string containing the employee's first name and surname
-     */
+
     public String getFullName() {
         return firstName + " " + surname;
     }

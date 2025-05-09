@@ -10,9 +10,7 @@ import java.util.Objects;
 public class Doctor extends Employee {
     private String speciality;
 
-    /**
-     * Default constructor
-     */
+
     public Doctor() {
         super();
     }

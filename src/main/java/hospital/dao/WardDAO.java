@@ -264,7 +264,6 @@ public class WardDAO {
         ward.setBedCount(rs.getInt("bed_count"));
         ward.setSupervisorId(rs.getInt("supervisor_id"));
 
-        // Convert SQL timestamps to LocalDateTime
         Timestamp createdAt = rs.getTimestamp("created_at");
         if (createdAt != null) {
             ward.setCreatedAt(createdAt.toLocalDateTime());

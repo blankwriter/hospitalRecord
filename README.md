@@ -1,4 +1,5 @@
 HealthTrack Hospital Management System
+
 Overview
 HealthTrack is a comprehensive hospital management system designed to streamline patient care, staff management, and department operations in healthcare facilities. The system provides modules for managing patients, doctors, nurses, departments, wards, and hospitalizations with robust reporting capabilities.
 
@@ -27,3 +28,6 @@ System Requirements
    .MySQL 8.0+
 
    .Log4j 2.x
+
+
+   ![Database Schema Diagram](https://github.com/blankwriter/hospitalRecord/raw/main/deepseek_mermaid_20250511_5a79e5.png)
